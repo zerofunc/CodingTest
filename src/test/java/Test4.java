@@ -20,9 +20,9 @@ public class Test4 {
         strings.add("}\\t\\t");
 
         StringBuffer sb = new StringBuffer();
-
+        // space 몇번 처리할지
         int INPUT = 4;
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < INPUT; i++) {
             sb.append(" ");
         }
 
