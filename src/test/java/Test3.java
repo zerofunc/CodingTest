@@ -31,15 +31,6 @@ public class Test3 {
         if (a.find()) {
 
             memDate = formats.stream()
-                    .filter(str -> {
-                        SimpleDateFormat dateTimeFormatter = new SimpleDateFormat(str);
-                        try {
-                            dateTimeFormatter.parse(a.group());
-                        } catch (ParseException e) {
-                            return false;
-                        }
-                        return true;
-                    })
                     .map(str -> {
                         SimpleDateFormat dateTimeFormatter = new SimpleDateFormat(str);
                         Date date = null;
@@ -91,16 +82,6 @@ public class Test3 {
                     // pattern에 매칭되는 날짜를 찾았다면 날짜를 뽑아온다.
                     if (a.find()) {
                         memoDate = formats.stream()
-                                .filter(str -> {
-                                    // 위에 정의한 DateFormat으로 변경가능한거 찾기
-                                    SimpleDateFormat dateTimeFormatter = new SimpleDateFormat(str);
-                                    try {
-                                        dateTimeFormatter.parse(a.group());
-                                    } catch (ParseException e) {
-                                        return false;
-                                    }
-                                    return true;
-                                })
                                 .map(str -> {
                                     // DateFormat으로 변경가능한 데이터를 Date형식으로 변환
                                     SimpleDateFormat dateTimeFormatter = new SimpleDateFormat(str);
